@@ -3,6 +3,7 @@ services:
   - type: web
     name: vyapaari-backend
     env: node
+    plan: free
     buildCommand: cd backend && npm install
     startCommand: cd backend && npm start
     envVars:
@@ -25,6 +26,7 @@ services:
   - type: web
     name: vyapaari-frontend
     env: static
+    plan: free
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: ./frontend/dist
     envVars:
