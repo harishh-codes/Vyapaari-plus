@@ -34,7 +34,7 @@ const VendorOrders = () => {
   const fetchOrders = async () => {
     try {
       setLoading(true);
-      const response = await api.get('/vendor/orders');
+      const response = await api.get('/api/vendor/orders');
       setOrders(response.data.orders || []);
     } catch (error) {
       console.error('Error fetching orders:', error);
@@ -47,7 +47,7 @@ const VendorOrders = () => {
   const rateOrder = async (orderId, rating, review) => {
     try {
       setSubmittingRating(true);
-      await api.post(`/vendor/orders/${orderId}/rate`, { rating, review });
+              await api.post(`/api/vendor/orders/${orderId}/rate`, { rating, review });
       toast.success('Order rated successfully!');
       fetchOrders(); // Refresh orders
       closeRatingModal();
@@ -97,7 +97,7 @@ const VendorOrders = () => {
     try {
       console.log('🔍 Frontend: Cancelling order:', orderId);
       
-      const response = await api.patch(`/vendor/orders/${orderId}/status`, {
+              const response = await api.patch(`/api/vendor/orders/${orderId}/status`, {
         status: 'Cancelled'
       });
       
@@ -116,7 +116,7 @@ const VendorOrders = () => {
 
   const reorder = async (orderId) => {
     try {
-      await api.post(`/vendor/orders/${orderId}/reorder`);
+              await api.post(`/api/vendor/orders/${orderId}/reorder`);
       toast.success('Order added to cart!');
       navigate('/vendor/cart');
     } catch (error) {

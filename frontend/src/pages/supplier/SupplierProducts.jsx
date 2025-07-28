@@ -41,7 +41,7 @@ const SupplierProducts = () => {
   const fetchProducts = async () => {
     try {
       setLoading(true);
-      const response = await api.get('/supplier/products');
+      const response = await api.get('/api/supplier/products');
       setProducts(response.data.products || []);
     } catch (error) {
       console.error('Error fetching products:', error);
@@ -87,7 +87,7 @@ const SupplierProducts = () => {
   const handleDeleteProduct = async (product) => {
     if (window.confirm(`Are you sure you want to delete ${product.name}?`)) {
       try {
-        await api.delete(`/supplier/products/${product._id}`);
+        await api.delete(`/api/supplier/products/${product._id}`);
         toast.success('Product deleted successfully');
         fetchProducts();
       } catch (error) {
@@ -124,7 +124,7 @@ const SupplierProducts = () => {
         
         console.log('🔍 Frontend: Updating product with data:', updateData);
         
-        const response = await api.put(`/supplier/products/${editingProduct._id}`, updateData);
+        const response = await api.put(`/api/supplier/products/${editingProduct._id}`, updateData);
         
         if (response.data.success) {
           console.log('✅ Frontend: Product updated successfully');
@@ -142,7 +142,7 @@ const SupplierProducts = () => {
         
         console.log('🔍 Frontend: Adding new product with data:', productData);
         
-        const response = await api.post('/supplier/products', productData);
+        const response = await api.post('/api/supplier/products', productData);
         
         if (response.data.success) {
           console.log('✅ Frontend: Product added successfully');
@@ -202,7 +202,7 @@ const SupplierProducts = () => {
       formData.append('image', file);
 
       // Upload to Cloudinary
-      const response = await api.post('/supplier/upload-image', formData, {
+      const response = await api.post('/api/supplier/upload-image', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -242,7 +242,7 @@ const SupplierProducts = () => {
       
       console.log('🔍 Frontend: Toggling availability for product:', product.name, 'from', currentAvailability, 'to', newAvailability);
       
-      const response = await api.put(`/supplier/products/${product._id}`, {
+      const response = await api.put(`/api/supplier/products/${product._id}`, {
         isAvailable: newAvailability
       });
       

@@ -31,7 +31,7 @@ const VendorCart = () => {
       
       for (const supplierId of supplierIds) {
         try {
-          const response = await api.get(`/supplier/${supplierId}/name`);
+          const response = await api.get(`/api/supplier/${supplierId}/name`);
           names[supplierId] = response.data.businessName;
         } catch (error) {
           names[supplierId] = 'Unknown Supplier';
