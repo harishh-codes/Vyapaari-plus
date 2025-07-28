@@ -62,7 +62,8 @@ app.use(cors({
     'http://localhost:3000', 
     'http://127.0.0.1:5173',
     'https://vyapaari-frontend.onrender.com',
-    'https://vyapaari-plus.onrender.com'
+    'https://vyapaari-plus.onrender.com',
+    'https://vyapaari-plus-app.onrender.com'
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
