@@ -33,7 +33,7 @@ const BrowseProducts = () => {
   const fetchProducts = async () => {
     try {
       setLoading(true);
-      const response = await api.get('/api/products');
+      const response = await api.get('/products');
       setProducts(response.data.products || []);
     } catch (error) {
       console.error('Error fetching products:', error);
@@ -45,7 +45,7 @@ const BrowseProducts = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await api.get('/api/products/categories/list');
+      const response = await api.get('/products/categories/list');
       setCategories(response.data.categories || []);
     } catch (error) {
       console.error('Error fetching categories:', error);
@@ -54,7 +54,7 @@ const BrowseProducts = () => {
 
   const addToSavedKit = async (productId) => {
     try {
-              await api.post('/api/vendor/saved-kit/add', { productId });
+      await api.post('/vendor/saved-kit/add', { productId });
       toast.success('Product added to saved kit!');
       // Refresh products to update saved status (if we had one)
       // For now, just a toast

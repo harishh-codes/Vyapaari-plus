@@ -57,7 +57,7 @@ const VendorOnboarding = () => {
 
     setLoading(true);
     try {
-      const response = await api.post('/api/vendor/onboarding', formData);
+      const response = await api.post('/vendor/onboarding', formData);
       
       if (response.data.success) {
         updateUser(response.data.vendor);

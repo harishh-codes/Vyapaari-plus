@@ -20,7 +20,7 @@ const VendorCompare = () => {
 
   const fetchProductData = async () => {
     try {
-      const response = await api.get(`/api/vendor/compare/${productId}`);
+      const response = await api.get(`/vendor/compare/${productId}`);
       setProduct(response.data.product);
       setSuppliers(response.data.suppliers);
     } catch (error) {
@@ -41,7 +41,7 @@ const VendorCompare = () => {
       setSelectedSupplier(supplier);
       setShowSupplierModal(true);
       
-              const response = await api.get(`/api/vendor/suppliers/${supplier.supplierId._id}`);
+      const response = await api.get(`/vendor/suppliers/${supplier.supplierId._id}`);
       setSupplierDetails(response.data.supplier);
     } catch (error) {
       console.error('Error fetching supplier details:', error);

@@ -31,7 +31,7 @@ const SupplierDashboard = () => {
       setLoading(true);
       console.log('🔍 Frontend: Fetching supplier dashboard data');
       
-      const response = await api.get('/api/supplier/dashboard');
+      const response = await api.get('/supplier/dashboard');
       
       if (response.data.success) {
         console.log('✅ Frontend: Dashboard data fetched successfully:', response.data);

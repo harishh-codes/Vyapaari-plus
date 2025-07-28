@@ -25,7 +25,7 @@ const SavedKit = () => {
   const fetchSavedKit = async () => {
     try {
       setLoading(true);
-      const response = await api.get('/api/vendor/saved-kit');
+      const response = await api.get('/vendor/saved-kit');
       setSavedKit(response.data.savedKit || []);
     } catch (error) {
       console.error('Error fetching saved kit:', error);
@@ -37,7 +37,7 @@ const SavedKit = () => {
 
   const removeFromSavedKit = async (productId) => {
     try {
-              await api.delete(`/api/vendor/saved-kit/remove/${productId}`);
+      await api.delete(`/vendor/saved-kit/remove/${productId}`);
       toast.success('Product removed from saved kit');
       fetchSavedKit(); // Refresh the list
     } catch (error) {

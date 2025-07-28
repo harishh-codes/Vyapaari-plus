@@ -85,7 +85,7 @@ const SupplierOnboarding = () => {
 
     setLoading(true);
     try {
-      const response = await api.post('/api/supplier/onboarding', formData);
+      const response = await api.post('/supplier/onboarding', formData);
       
       if (response.data.success) {
         updateUser(response.data.supplier);

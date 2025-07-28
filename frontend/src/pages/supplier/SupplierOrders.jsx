@@ -30,7 +30,7 @@ const SupplierOrders = () => {
 
       console.log('🔍 Frontend: Fetching orders with params:', params.toString());
       
-      const response = await api.get(`/api/supplier/orders?${params}`);
+      const response = await api.get(`/supplier/orders?${params}`);
       
       if (response.data.success) {
         console.log('✅ Frontend: Orders fetched successfully:', response.data.orders);
@@ -51,7 +51,7 @@ const SupplierOrders = () => {
     try {
       console.log('🔍 Frontend: Updating order status:', orderId, 'to', newStatus);
       
-      const response = await api.patch(`/api/supplier/orders/${orderId}/status`, {
+      const response = await api.patch(`/supplier/orders/${orderId}/status`, {
         status: newStatus
       });
       
