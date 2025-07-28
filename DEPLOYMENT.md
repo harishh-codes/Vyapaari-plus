@@ -59,7 +59,7 @@
 3. **Deploy**:
    - Render will automatically build and deploy both services
    - Backend will be available at: `https://vyapaari-backend.onrender.com`
-   - Frontend will be available at: `https://vyapaari-frontend.onrender.com`
+   - Frontend will be available at: `https://vyapaari-plus-app.onrender.com`
 
 ### Option B: Manual Deployment
 
@@ -79,7 +79,7 @@ If you prefer to deploy services manually:
 1. Go to Render Dashboard → "New" → "Static Site"
 2. Connect your GitHub repository
 3. Configure:
-   - **Name**: `vyapaari-frontend`
+   - **Name**: `vyapaari-plus-app`
    - **Build Command**: `cd frontend && npm install && npm run build`
    - **Publish Directory**: `frontend/dist`
    - **Root Directory**: Leave empty (root)
@@ -114,7 +114,7 @@ Add these in your frontend service settings:
    - Should return: `{"status":"OK","message":"Vyapaari+ Backend is running"}`
 
 2. **Frontend**:
-   - Visit: `https://vyapaari-frontend.onrender.com`
+   - Visit: `https://vyapaari-plus-app.onrender.com`
    - Should load your Vyapaari+ application
 
 3. **Test Features**:

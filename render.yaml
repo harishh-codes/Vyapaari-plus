@@ -24,7 +24,7 @@ services:
 
   # Frontend Web Service
   - type: web
-    name: vyapaari-frontend
+    name: vyapaari-plus-app
     env: static
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: ./frontend/dist

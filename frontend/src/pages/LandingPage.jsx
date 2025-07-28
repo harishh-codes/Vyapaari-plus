@@ -163,7 +163,7 @@ const LandingPage = () => {
 
         {/* Footer */}
         <footer className="mt-20 text-center text-gray-500">
-          <p>&copy; 2024 Vyapaari+. All rights reserved.</p>
+          <p>&copy; 2025 Vyapaari+. All rights reserved.</p>
         </footer>
       </main>
     </div>
