@@ -26,7 +26,6 @@ services:
   - type: web
     name: vyapaari-frontend
     env: static
-    plan: free
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: ./frontend/dist
     envVars:
