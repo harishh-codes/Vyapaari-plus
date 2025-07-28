@@ -60,7 +60,7 @@ const VendorDashboard = () => {
   const fetchDashboardData = async () => {
     try {
       console.log('🔍 Frontend: Fetching dashboard data...');
-      const response = await api.get('/vendor/dashboard');
+      const response = await api.get('/api/vendor/dashboard');
       console.log('✅ Frontend: Dashboard data received:', response.data);
       setDashboardData(response.data);
     } catch (error) {

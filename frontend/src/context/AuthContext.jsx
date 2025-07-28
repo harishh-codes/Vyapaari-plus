@@ -31,7 +31,7 @@ export const AuthProvider = ({ children }) => {
   const fetchUserProfile = async () => {
     try {
       console.log('🔍 AuthContext: Fetching user profile...');
-      const response = await api.get('/auth/profile');
+      const response = await api.get('/api/auth/profile');
       console.log('✅ AuthContext: Profile response:', response.data);
       setUser(response.data.user);
     } catch (error) {
@@ -47,7 +47,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (phone, otp, role) => {
     try {
       console.log('🔍 AuthContext: Attempting login with phone:', phone, 'role:', role);
-      const response = await api.post('/auth/verify-otp', { phone, otp, role });
+      const response = await api.post('/api/auth/verify-otp', { phone, otp, role });
       console.log('✅ AuthContext: Login response:', response.data);
       const { token, user } = response.data;
       
@@ -69,7 +69,7 @@ export const AuthProvider = ({ children }) => {
   const requestOTP = async (phone, role) => {
     try {
       console.log('🔍 AuthContext: Requesting OTP for phone:', phone, 'role:', role);
-      const response = await api.post('/auth/request-otp', { phone, role });
+      const response = await api.post('/api/auth/request-otp', { phone, role });
       console.log('✅ AuthContext: OTP request response:', response.data);
       toast.success('OTP sent to your phone!');
       return { success: true };

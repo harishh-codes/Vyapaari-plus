@@ -33,7 +33,7 @@ const BrowseProducts = () => {
   const fetchProducts = async () => {
     try {
       setLoading(true);
-      const response = await api.get('/products');
+      const response = await api.get('/api/products');
       setProducts(response.data.products || []);
     } catch (error) {
       console.error('Error fetching products:', error);

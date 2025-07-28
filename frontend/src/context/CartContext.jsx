@@ -122,7 +122,7 @@ export const CartProvider = ({ children }) => {
 
       console.log('🔍 Frontend: Placing order with payload:', orderPayload);
 
-      const response = await api.post('/orders/place', orderPayload);
+      const response = await api.post('/api/orders/place', orderPayload);
       
       if (response.data.success) {
         clearCart();
